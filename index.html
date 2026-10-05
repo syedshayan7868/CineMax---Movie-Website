@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CineMax - Movie Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <i class="fa-solid fa-film"></i>
+        Cine<span>Max</span>
+    </div>
+
+    <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#trending">Trending</a>
+        <a href="#movies">Movies</a>
+        <a href="#categories">Categories</a>
+        <a href="#toprated">Top Rated</a>
+        <a href="#trailers">Trailers</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+</header>
+
+
+<!-- ================= SECTION 1 HOME ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="badge">#1 MOVIE PLATFORM</span>
+
+        <h1>
+            Watch The
+            <span>Best Movies</span>
+            Anytime
+        </h1>
+
+        <p>
+            Discover trending movies, popular classics and
+            the latest cinematic adventures all in one place.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#movies" class="btn">
+                <i class="fa-solid fa-play"></i>
+                Explore Movies
+            </a>
+
+            <a href="#trailers" class="btn secondary">
+                Watch Trailer
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SECTION 2 TRENDING ================= -->
+
+<section id="trending" class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="red-text">WHAT'S HOT</p>
+            <h2>Trending <span>Movies</span></h2>
+        </div>
+
+        <a href="#movies" class="view-all">
+            View All →
+        </a>
+
+    </div>
+
+
+    <div class="movie-grid">
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg"
+                alt="Deadpool">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Deadpool & Wolverine</h3>
+                <span>2024</span>
+                <span class="rating">★ 8.1</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg"
+                alt="Moana">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Moana 2</h3>
+                <span>2024</span>
+                <span class="rating">★ 7.0</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/qhb1qOilapbapxWQn9jtRCMwXJF.jpg"
+                alt="Wonka">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Wonka</h3>
+                <span>2023</span>
+                <span class="rating">★ 7.1</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg"
+                alt="Inside Out">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Inside Out 2</h3>
+                <span>2024</span>
+                <span class="rating">★ 7.6</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SECTION 3 SEARCH MOVIES ================= -->
+
+<section id="movies" class="section search-section">
+
+    <div class="section-heading center">
+
+        <div>
+            <p class="red-text">DISCOVER</p>
+            <h2>Search <span>Movies</span></h2>
+        </div>
+
+    </div>
+
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="movieSearch"
+            placeholder="Search movie name..."
+        >
+
+    </div>
+
+
+    <div id="movieContainer" class="movie-grid">
+
+
+        <div class="movie-card" data-title="Inception">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg"
+                alt="Inception">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Inception</h3>
+                <span>2010</span>
+                <span class="rating">★ 8.8</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card" data-title="Interstellar">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+                alt="Interstellar">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Interstellar</h3>
+                <span>2014</span>
+                <span class="rating">★ 8.7</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card" data-title="The Batman">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg"
+                alt="Batman">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>The Batman</h3>
+                <span>2022</span>
+                <span class="rating">★ 7.7</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card" data-title="Avengers Endgame">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg"
+                alt="Avengers">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Avengers Endgame</h3>
+                <span>2019</span>
+                <span class="rating">★ 8.3</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card" data-title="Avatar">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/kyeqWdyUXW608qlYkRqosgbbJyK.jpg"
+                alt="Avatar">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Avatar</h3>
+                <span>2009</span>
+                <span class="rating">★ 7.9</span>
+            </div>
+
+        </div>
+
+
+        <div class="movie-card" data-title="Joker">
+
+            <div class="poster">
+
+                <img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+                alt="Joker">
+
+                <div class="movie-overlay">
+                    <button class="play-btn">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="movie-info">
+                <h3>Joker</h3>
+                <span>2019</span>
+                <span class="rating">★ 8.1</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <p id="noResults" class="no-results">
+        No movies found.
+    </p>
+
+</section>
+
+
+<!-- ================= SECTION 4 CATEGORIES ================= -->
+
+<section id="categories" class="section categories">
+
+    <div class="section-heading center">
+
+        <div>
+            <p class="red-text">EXPLORE</p>
+            <h2>Movie <span>Categories</span></h2>
+        </div>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div class="category-card">
+            <i class="fa-solid fa-gun"></i>
+            <h3>Action</h3>
+            <p>120+ Movies</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-face-laugh"></i>
+            <h3>Comedy</h3>
+            <p>85+ Movies</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-ghost"></i>
+            <h3>Horror</h3>
+            <p>65+ Movies</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-heart"></i>
+            <h3>Romance</h3>
+            <p>90+ Movies</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-rocket"></i>
+            <h3>Sci-Fi</h3>
+            <p>75+ Movies</p>
+        </div>
+
+        <div class="category-card">
+            <i class="fa-solid fa-mask-face"></i>
+            <h3>Thriller</h3>
+            <p>100+ Movies</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SECTION 5 TOP RATED ================= -->
+
+<section id="toprated" class="section top-rated">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="red-text">BEST OF THE BEST</p>
+            <h2>Top <span>Rated</span></h2>
+        </div>
+
+    </div>
+
+
+    <div class="top-movie">
+
+        <div class="top-poster">
+
+            <img
+            src="https://image.tmdb.org/t/p/w780/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+            alt="Avengers">
+
+        </div>
+
+
+        <div class="top-content">
+
+            <span class="badge">TOP RATED</span>
+
+            <h2>Avengers: Infinity War</h2>
+
+            <div class="movie-meta">
+
+                <span>2018</span>
+                <span>2h 29m</span>
+                <span>Action</span>
+
+                <strong>★ 8.4</strong>
+
+            </div>
+
+            <p>
+                The Avengers and their allies must be willing
+                to sacrifice everything in an attempt to defeat
+                the powerful Thanos before his plans destroy
+                the universe.
+            </p>
+
+            <button class="btn">
+                <i class="fa-solid fa-play"></i>
+                Watch Trailer
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SECTION 6 TRAILERS ================= -->
+
+<section id="trailers" class="trailer-section">
+
+    <div class="trailer-overlay"></div>
+
+    <div class="trailer-content">
+
+        <p class="red-text">LATEST TRAILER</p>
+
+        <h2>Experience The <span>Magic</span></h2>
+
+        <p>
+            Watch the latest movie trailers and discover
+            what's coming next.
+        </p>
+
+        <button class="trailer-btn" onclick="openTrailer()">
+            <i class="fa-solid fa-play"></i>
+        </button>
+
+        <h3>PLAY TRAILER</h3>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRAILER MODAL ================= -->
+
+<div id="trailerModal" class="modal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closeTrailer()">×</button>
+
+        <iframe
+            src="https://www.youtube.com/embed/d9MyW72ELq0"
+            title="Movie Trailer"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SECTION 7 CONTACT ================= -->
+
+<section id="contact" class="contact section">
+
+    <div class="contact-info">
+
+        <p class="red-text">GET IN TOUCH</p>
+
+        <h2>
+            Join The
+            <span>CineMax</span>
+            Experience
+        </h2>
+
+        <p>
+            Subscribe to receive movie updates,
+            new releases and exclusive content.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <form id="subscribeForm">
+
+        <input
+            type="text"
+            placeholder="Your Name"
+            required>
+
+        <input
+            type="email"
+            placeholder="Your Email"
+            required>
+
+        <button type="submit">
+            Subscribe Now
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="logo">
+        <i class="fa-solid fa-film"></i>
+        Cine<span>Max</span>
+    </div>
+
+    <p>
+        Your world of movies, entertainment and cinema.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#categories">Categories</a>
+        <a href="#contact">Contact</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 CineMax. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
